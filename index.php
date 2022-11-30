@@ -18,7 +18,7 @@
 </head>
 
 <body>
-    <nav class="bg-transparent border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900">
+    <nav class="flex items-center bg-transparent border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900">
         <div class="container flex flex-wrap items-center justify-between mx-auto">
             <img src="public/assets/images/logo.png" class="h-6 mr-3 sm:h-9" alt="Flowbite Logo" />
             <button data-collapse-toggle="navbar" type="button" class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar" aria-expanded="false">
@@ -46,14 +46,14 @@
     </nav>
 
     <div class="w-full h-full z-0" id="tab-content">
-        <div class="hidden p-4 text-transparent" id="home" role="tabpanel" aria-labelledby="home-tab">
-            <?= include_once('src/views/Home.php') ?>
+        <div class="hidden p-4" id="home" role="tabpanel" aria-labelledby="home-tab">
+            <?php include_once('src/views/Home.php') ?>
         </div>
-        <div class="hidden p-4 text-transparent" id="products" role="tabpanel" aria-labelledby="products-tab">
-           <?= include_once('src/views/Products.php') ?>
+        <div class="hidden p-4" id="products" role="tabpanel" aria-labelledby="products-tab">
+           <?php include_once('src/views/Products.php') ?>
         </div>
-        <div class="hidden p-4 text-transparent" id="login" role="tabpanel" aria-labelledby="login-tab">
-            <?= include_once('src/views/Login.php') ?>
+        <div class="hidden p-4" id="login" role="tabpanel" aria-labelledby="login-tab">
+            <?php include_once('src/views/Login.php') ?>
         </div>
     </div>
 </body>
