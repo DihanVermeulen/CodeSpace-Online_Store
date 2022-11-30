@@ -1,6 +1,5 @@
-:root {
-    --primary-colour: #00E0FF;
-}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
+@import url(./variables.css);
 
 body {
     box-sizing: border-box;
@@ -8,13 +7,19 @@ body {
     margin: 0;
     background-color: #242424;
     color: #fff;
+    font-weight: bolder;
+}
+
+.font-poppins {
+    font-family: 'Poppins', sans-serif;
 }
 
 .card {
     background-color: #fff;
-    height: 400px;
+    height: 350px;
     width: 300px;
     border-radius: 10px;
+    overflow: hidden;
 }
 
 .card:hover > .card-popup {
