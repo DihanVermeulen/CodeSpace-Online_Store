@@ -33,6 +33,11 @@ body {
     display: block;
 }
 
+.card:hover {
+    transform: scale(1.02);
+    transition: all .3s ease-in-out;
+}
+
 .card-popup {
     position: absolute;
     background-color: var(--primary-colour);
