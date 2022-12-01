@@ -3,12 +3,14 @@
 class Product {
 
     // ===================Variables========================
+
     private $id;
     private $title;
     private $price;
     private $image_location;
 
     // ========================Construct====================
+
     public function __construct($id, $title, $price, $image_location) {
         $this->id = $id;
         $this->title = $title;
@@ -18,7 +20,6 @@ class Product {
 
     // ==================Get and Set==========================
     
-
     /**
      * Get the value of id
      */ 
