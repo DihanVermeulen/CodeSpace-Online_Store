@@ -30,7 +30,7 @@
             </button>
 
             <div class="hidden w-full md:block md:w-auto z-10" id="navbar">
-                <ul class="flex flex-col mt-20 absolute right-0 md:static lg:static bg-white md:bg-transparent md:mr-8 rounded-lg md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700" id="tabs" data-tabs-toggle="#tab-content" role="tablist">
+                <!-- <ul class="flex flex-col mt-20 absolute right-0 md:static lg:static bg-white md:bg-transparent md:mr-8 rounded-lg md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700" id="tabs" data-tabs-toggle="#tab-content" role="tablist">
                     <li>
                         <a id="home-tab" data-tabs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="false" class="block py-2 pl-3 pr-4 text-gray-500 md:text-white rounded md:border-0 hover:text-blue-300 md:p-0">
                             <i class="fa-sharp fa-solid fa-house"></i>
@@ -49,22 +49,41 @@
                             <span>Login</span>
                         </a>
                     </li>
-                </ul>
+                </ul> -->
+                <form method="POST">
+                    <ul class="flex flex-col mt-20 z-50 absolute right-0 md:static lg:static bg-white md:bg-transparent md:mr-8 rounded-lg md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700" id="tabs" data-tabs-toggle="#tab-content" role="tablist">
+                        <li>
+                            <button type="submit" name="home-tab" class="block py-2 pl-3 pr-4 text-gray-500 md:text-white rounded md:border-0 hover:text-blue-300 md:p-0">Home</button>
+                        </li>
+                        <li>
+                            <button type="submit" name="products-tab" class="block py-2 pl-3 pr-4 text-gray-500 md:text-white rounded md:border-0 hover:text-blue-300 md:p-0">Products</button>
+                        </li>
+                        <li>
+                            <button type="submit" name="login-tab" class="block py-2 pl-3 pr-4 text-gray-500 md:text-white rounded md:border-0 hover:text-blue-300 md:p-0">Login</button>
+                        </li>
+                    </ul>
+                </form>
             </div>
 
         </div>
     </nav>
 
     <div class="w-full h-full z-0" id="tab-content">
-        <div class="hidden p-4" id="home" role="tabpanel" aria-labelledby="home-tab">
-            <?php include_once('src/views/Home.php') ?>
-        </div>
-        <div class="hidden p-4" id="products" role="tabpanel" aria-labelledby="products-tab">
-            <?php include_once('src/views/Products.php') ?>
-        </div>
-        <div class="hidden p-4" id="login" role="tabpanel" aria-labelledby="login-tab">
-            <?php include_once('src/views/Login.php') ?>
-        </div>
+
+        <?php
+        if (isset($_POST['home-tab'])) {
+            include_once('src/views/Home.php');
+        } else if (isset($_POST['products-tab'])) {
+            include_once('src/views/Products.php');
+        } else if (isset($_POST['login-tab'])) {
+            include_once('src/views/Login.php');
+        } else if(isset($_POST['view-product-tab'])) {
+            include_once('src/views/ViewProduct.php');
+        }
+         else {
+            include_once('src/views/Home.php');
+        }
+        ?>
     </div>
 </body>
 
