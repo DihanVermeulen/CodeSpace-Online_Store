@@ -26,7 +26,7 @@ body {
     display: flex;
     height: fit-content;
     padding: 10px;
-    transition: all .3s ease-in-out;
+    transition: all .1s ease-in-out;
 }
 
 .card:hover > .card-popup p {
