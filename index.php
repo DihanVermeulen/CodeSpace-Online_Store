@@ -30,15 +30,24 @@
             </button>
 
             <div class="hidden w-full md:block md:w-auto z-10" id="navbar">
-                <ul class="flex flex-col bg-white md:bg-transparent mt-4 md:mr-8 rounded-lg md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700" id="tabs" data-tabs-toggle="#tab-content" role="tablist">
+                <ul class="flex flex-col mt-20 absolute right-0 md:static lg:static bg-white md:bg-transparent md:mr-8 rounded-lg md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700" id="tabs" data-tabs-toggle="#tab-content" role="tablist">
                     <li>
-                        <a id="home-tab" data-tabs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="false" class="block py-2 pl-3 pr-4 text-gray-500 md:text-white rounded md:border-0 hover:text-blue-300 md:p-0">Home</a>
+                        <a id="home-tab" data-tabs-target="#home" type="button" role="tab" aria-controls="home" aria-selected="false" class="block py-2 pl-3 pr-4 text-gray-500 md:text-white rounded md:border-0 hover:text-blue-300 md:p-0">
+                            <i class="fa-sharp fa-solid fa-house"></i>
+                            <span>Home</span>
+                        </a>
                     </li>
                     <li>
-                        <a id="products-tab" data-tabs-target="#products" type="button" role="tab" aria-controls="products" aria-selected="false" class="block py-2 pl-3 pr-4 text-gray-500 md:text-gray-300 rounded md:border-0 hover:text-blue-300 md:p-0">Products</a>
+                        <a id="products-tab" data-tabs-target="#products" type="button" role="tab" aria-controls="products" aria-selected="false" class="block py-2 pl-3 pr-4 text-gray-500 md:text-gray-300 rounded md:border-0 hover:text-blue-300 md:p-0">
+                            <i class="fa-sharp fa-solid fa-bag-shopping"></i>
+                            <span>Products</span>
+                        </a>
                     </li>
                     <li>
-                        <a id="login-tab" data-tabs-target="#login" role="tab" aria-controls="login" aria-selected="false" class="block py-2 pl-3 pr-4 text-gray-500 md:text-gray-300 rounded md:border-0 hover:text-blue-300 md:p-0">Login</a>
+                        <a id="login-tab" data-tabs-target="#login" role="tab" aria-controls="login" aria-selected="false" class="block py-2 pl-3 pr-4 text-gray-500 md:text-gray-300 rounded md:border-0 hover:text-blue-300 md:p-0">
+                            <i class="fa-sharp fa-solid fa-arrow-right-to-bracket"></i>
+                            <span>Login</span>
+                        </a>
                     </li>
                 </ul>
             </div>
@@ -51,7 +60,7 @@
             <?php include_once('src/views/Home.php') ?>
         </div>
         <div class="hidden p-4" id="products" role="tabpanel" aria-labelledby="products-tab">
-           <?php include_once('src/views/Products.php') ?>
+            <?php include_once('src/views/Products.php') ?>
         </div>
         <div class="hidden p-4" id="login" role="tabpanel" aria-labelledby="login-tab">
             <?php include_once('src/views/Login.php') ?>
