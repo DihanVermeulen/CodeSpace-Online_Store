@@ -11,7 +11,7 @@
         <h1 class="text-2xl font-extrabold font-poppins">Pick. Choose. Buy.</h1>
     </header>
     <form method="POST">
-        <main class="h-screen grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 text-gray-900">
+        <main class="h-screen grid grid-cols-2 gap-8 md:grid-cols-3 lg:grid-cols-4 text-gray-900">
             <?php
             foreach ($data as $item) { ?>
                 <article class="card">
