@@ -1,3 +1,14 @@
+<?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+session_start();
+if (!isset($_SESSION['cart'])) {
+    $_SESSION['cart'] = [];
+};
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,7 +24,7 @@
 </head>
 
 <body>
-    <nav class="inline-flex items-center bg-transparent border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900">
+    <nav class="inline-flex items-center w-full bg-transparent border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900">
         <div class="container flex flex-wrap items-center justify-between mx-auto">
             <img src="public/assets/images/logo.png" class="h-6 mr-3 sm:h-9" alt="Flowbite Logo" />
             <button data-drawer-target="drawer-navigation" data-drawer-show="drawer-navigation" aria-controls="drawer-navigation" type="button" class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-700 focus:bg-gray-700" aria-controls="navbar" aria-expanded="false">
@@ -27,19 +38,19 @@
                 <form method="POST">
                     <ul class="flex flex-col justify-center mr-8 z-50 absolute right-0 md:static lg:static bg-white md:bg-transparent md:mr-8 rounded-lg md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700" id="tabs" data-tabs-toggle="#tab-content" role="tablist">
                         <li class="flex items-center">
-                            <button type="submit" name="home-tab" class="text-gray-500 hover:bg-gray-700 hover:text-white rounded-lg p-1 text-center inline-flex items-center">
+                            <button type="submit" name="home-tab" class="text-gray-500 hover:text-white rounded-lg p-1 text-center inline-flex items-center">
                                 <i class="fa-solid fa-house icon"></i>Home</button>
                         </li>
                         <li class="flex items-center">
-                            <button type="submit" name="products-tab" class="text-gray-500 hover:bg-gray-700 hover:text-white rounded-lg p-1 text-center inline-flex items-center">
+                            <button type="submit" name="products-tab" class="text-gray-500 hover:text-white rounded-lg p-1 text-center inline-flex items-center">
                                 <i class="fa-solid fa-bag-shopping icon"></i>Products</button>
                         </li>
                         <li class="flex items-center">
-                            <button type="submit" name="login-tab" class="text-gray-500 hover:bg-gray-700 hover:text-white rounded-lg p-1 text-center inline-flex items-center">
+                            <button type="submit" name="login-tab" class="text-gray-500 hover:text-white rounded-lg p-1 text-center inline-flex items-center">
                                 <i class="fa-solid fa-right-to-bracket icon"></i>Login</button>
                         </li>
                         <li class="flex items-center">
-                            <button type="submit" class="text-gray-500 hover:bg-gray-700 hover:text-white rounded-lg p-1 relative text-center inline-flex items-center">
+                            <button type="submit" class="text-gray-500 hover:text-white rounded-lg p-1 relative text-center inline-flex items-center">
                                 <i class="fa-solid fa-cart-shopping icon"></i>
                                 Cart
                             </button>
@@ -52,7 +63,7 @@
     </nav>
 
     <!-- drawer component -->
-    <div id="drawer-navigation" class="fixed z-40 h-screen p-4 overflow-y-auto bg-white w-80 dark:bg-gray-800" tabindex="-1" aria-labelledby="drawer-navigation-label">
+    <div id="drawer-navigation" class="sm:hidden fixed z-40 h-screen p-4 overflow-y-auto bg-white w-80 dark:bg-gray-800" tabindex="-1" aria-labelledby="drawer-navigation-label">
         <h5 id="drawer-navigation-label" class="text-base font-semibold text-gray-500 uppercase dark:text-gray-400">Menu</h5>
         <button type="button" data-drawer-dismiss="drawer-navigation" aria-controls="drawer-navigation" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 absolute top-2.5 right-2.5 inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white">
             <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -109,10 +120,9 @@
             include_once('src/views/Products.php');
         } else if (isset($_POST['login-tab'])) {
             include_once('src/views/Login.php');
-        } else if(isset($_POST['view-product-tab'])) {
+        } else if (isset($_POST['view-product'])) {
             include_once('src/views/ViewProduct.php');
-        }
-         else {
+        } else {
             include_once('src/views/Home.php');
         }
         ?>
