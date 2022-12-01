@@ -53,3 +53,7 @@ body {
     display: none;
     font-weight: 500;
 }
+
+.view-product-img {
+    height: 20rem;
+}
