@@ -1,6 +1,7 @@
 <?php
 
-class User {
+class User
+{
 
     private $name;
     private $surname;
@@ -9,18 +10,33 @@ class User {
 
     // ====================Construct====================
 
-    public function __construct($name, $surname, $email, $password) {
+    public function __construct($name, $surname, $email, $password)
+    {
         $this->$name = $name;
         $this->$surname = $surname;
         $this->$email = $email;
         $this->$password = $password;
     }
 
+    // ====================Methods====================
+
+    private function hashPassword($password)
+    {
+        $hash_password = password_hash($password, PASSWORD_BCRYPT);
+        return $hash_password;
+    }
+
+    private function verifyPassword($hash)
+    {
+        $is_password_correct = password_verify($hash, PASSWORD_BCRYPT);
+        return $is_password_correct;
+    }
+
     // ====================Get and Set====================
 
     /**
      * Get the value of name
-     */ 
+     */
     public function getName()
     {
         return $this->name;
@@ -30,7 +46,7 @@ class User {
      * Set the value of name
      *
      * @return  self
-     */ 
+     */
     public function setName($name)
     {
         $this->name = $name;
@@ -40,7 +56,7 @@ class User {
 
     /**
      * Get the value of surname
-     */ 
+     */
     public function getSurname()
     {
         return $this->surname;
@@ -50,7 +66,7 @@ class User {
      * Set the value of surname
      *
      * @return  self
-     */ 
+     */
     public function setSurname($surname)
     {
         $this->surname = $surname;
@@ -60,7 +76,7 @@ class User {
 
     /**
      * Get the value of email
-     */ 
+     */
     public function getEmail()
     {
         return $this->email;
@@ -70,7 +86,7 @@ class User {
      * Set the value of email
      *
      * @return  self
-     */ 
+     */
     public function setEmail($email)
     {
         $this->email = $email;
@@ -80,7 +96,7 @@ class User {
 
     /**
      * Get the value of password
-     */ 
+     */
     public function getPassword()
     {
         return $this->password;
@@ -90,7 +106,7 @@ class User {
      * Set the value of password
      *
      * @return  self
-     */ 
+     */
     public function setPassword($password)
     {
         $this->password = $password;
