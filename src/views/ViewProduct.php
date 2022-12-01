@@ -4,5 +4,6 @@ if (isset($_POST['view-product'])) {
 }
 
 include __DIR__ . './../config/DbConfig.php';
+include __DIR__ . './../data/ProductDAO.php';
 
 ?>
