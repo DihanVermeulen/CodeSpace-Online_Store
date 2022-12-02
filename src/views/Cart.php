@@ -14,15 +14,12 @@ if (isset($_POST['add-to-cart'])) {
         if ($cart_item['id'] == $id) {
             $_SESSION['cart'][$index]['quantity'] += $quantity;
             $cart_item_exists = true;
-            echo "items exists";
-            echo $cart_item['quantity'];
             break;
         }
     }
 
     // If item does not exist in cart then just push to array
     if (!$cart_item_exists) {
-        echo "item does not exist";
         array_push($_SESSION['cart'], array(
             "id" => $id,
             "quantity" => $quantity,
@@ -47,13 +44,13 @@ if (isset($_POST['add-to-cart'])) {
         <tbody>
             <?php
             foreach ($_SESSION['cart'] as $cart_item) { ?>
-                <tr>
-                    <td class="flex justify-center"><img class="w-44 mr-8" src='<?php echo $cart_item['image'] ?>' alt="NFT" />
+                <tr class="border-b">
+                    <td class="flex justify-center items-center p-4 text-3xl"><img class="w-44 mr-8" src='<?php echo $cart_item['image'] ?>' alt="NFT" />
                         <?php echo $cart_item['title']
                         ?></td>
-                    <td class="text-center"><?php echo $cart_item['quantity'] ?></td>
-                    <td class="text-center"><button>X</button></td>
-                    <td class="text-center"><?php echo $cart_item['price'] ?></td>
+                    <td class="text-center text-xl"><?php echo $cart_item['quantity'] ?></td>
+                    <td class="text-center text-xl"><button>X</button></td>
+                    <td class="text-center text-xl"><?php echo $cart_item['quantity'] * $cart_item['price'] ?> ETH</td>
                 </tr>
             <?php } ?>
         </tbody>
