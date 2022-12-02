@@ -34,3 +34,28 @@ if (isset($_POST['add-to-cart'])) {
 }
 ?>
 
+<section>
+    <table class="w-full">
+        <thead class="border-b">
+            <tr>
+                <th>Description</th>
+                <th>Quantity</th>
+                <th>Remove</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php
+            foreach ($_SESSION['cart'] as $cart_item) { ?>
+                <tr>
+                    <td class="flex justify-center"><img class="w-44 mr-8" src='<?php echo $cart_item['image'] ?>' alt="NFT" />
+                        <?php echo $cart_item['title']
+                        ?></td>
+                    <td class="text-center"><?php echo $cart_item['quantity'] ?></td>
+                    <td class="text-center"><button>X</button></td>
+                    <td class="text-center"><?php echo $cart_item['price'] ?></td>
+                </tr>
+            <?php } ?>
+        </tbody>
+    </table>
+</section>
