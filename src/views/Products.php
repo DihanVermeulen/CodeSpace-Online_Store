@@ -1,5 +1,4 @@
     <?php
-    include __DIR__ . '/../data.php';
     include __DIR__ . './../config/DbConfig.php';
     include __DIR__ . './../data/ProductDAO.php';
     $product_dao = new ProductDAO();
