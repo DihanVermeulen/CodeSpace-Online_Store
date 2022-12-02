@@ -28,7 +28,10 @@ if (isset($_POST['view-product'])) {
                 <div class="flex flex-col justify-items-start">
                     <label for="quantity" class="block mb-2 text-sm font-medium">QTY</label>
                     <input type="number" name="quantity" id="quantity" min='1' max='9' value='1' class="bg-gray-50 w-1/3 text-gray-800 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 p-3">
-                    <input class="hidden" name="id" type="text" value="<?php echo $product_data->id ?>">
+                    <input name="id" type="hidden" value="<?php echo $product_data->id ?>">
+                    <input name="title" type="hidden" value="<?php echo $product_data->product_name ?>">
+                    <input name="price" type="hidden" value="<?php echo $product_data->product_price ?>">
+                    <input name="image" type="hidden" value="<?php echo $product_data->product_image_location ?>">
                 </div>
             </form>
         </div>
