@@ -1,31 +1,36 @@
 <?php
+// Runs when item has been selected to be added to cart
 if (isset($_POST['add-to-cart'])) {
     $quantity = $_POST['quantity'];
     $id = $_POST['id'];
+    $title = $_POST['title'];
+    $image_location = $_POST['image'];
+    $price = $_POST['price'];
     $cart_item_exists = false;
 
-    foreach ($_SESSION['cart'] as $cart_item) {
+    // Checks if item already exists and concatenates that quantity  
+    // to the already existing cart item's quantity
+    foreach ($_SESSION['cart'] as $index => $cart_item) {
         if ($cart_item['id'] == $id) {
-            $quantity += $cart_item['quantity'];
+            $_SESSION['cart'][$index]['quantity'] += $quantity;
             $cart_item_exists = true;
-            array_push($_SESSION['cart'], array(
-                "id" => $id,
-                "quantity" => $quantity
-            ));
             echo "items exists";
-            echo $quantity;
+            echo $cart_item['quantity'];
             break;
         }
     }
 
-    if(!$cart_item_exists) {
+    // If item does not exist in cart then just push to array
+    if (!$cart_item_exists) {
         echo "item does not exist";
         array_push($_SESSION['cart'], array(
             "id" => $id,
-            "quantity" => $quantity
+            "quantity" => $quantity,
+            "title" => $title,
+            "price" => $price,
+            "image" => $image_location
         ));
     }
-
 }
 ?>
 
