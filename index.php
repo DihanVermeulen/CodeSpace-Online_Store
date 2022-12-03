@@ -26,10 +26,10 @@ if (!isset($_SESSION['cart'])) {
 <body>
 
     <!-- Navbar -->
-    <nav class="inline-flex items-center w-full bg-transparent border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900">
+    <nav class="inline-flex items-center w-full bg-transparent border-gray-200 px-2 sm:px-4 py-2.5 rounded">
         <div class="container flex flex-wrap items-center justify-between mx-auto">
             <img src="public/assets/images/logo.png" class="mr-3 h-9" alt="Logo" />
-            <button data-drawer-target="drawer-navigation" data-drawer-show="drawer-navigation" aria-controls="drawer-navigation" type="button" class="inline-flex items-center p-2 ml-3 text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-700 focus:bg-gray-700" aria-controls="navbar" aria-expanded="false">
+            <button data-drawer-target="drawer-navigation" data-drawer-show="drawer-navigation" aria-controls="drawer-navigation" type="button" class="inline-flex items-center p-2 ml-auto text-sm text-gray-500 rounded-lg lg:hidden hover:bg-gray-700 focus:bg-gray-700" aria-controls="navbar" aria-expanded="false">
                 <span class="sr-only">Open main menu</span>
                 <svg class="w-6 h-6" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z" clip-rule="evenodd"></path>
@@ -38,7 +38,7 @@ if (!isset($_SESSION['cart'])) {
 
             <div class="w-full md:block md:w-auto z-10">
                 <form method="POST" class="flex items-center">
-                    <ul class="hidden md:flex justify-center mr-8 z-50 absolute right-0 bg-transparent md:mr-8 rounded-lg md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0" id="tabs" data-tabs-toggle="#tab-content" role="tablist">
+                    <ul class="hidden lg:flex justify-center mr-8 z-50 absolute right-0 bg-transparent md:mr-8 rounded-lg md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0" id="tabs" data-tabs-toggle="#tab-content" role="tablist">
                         <li class="flex items-center">
                             <button type="submit" name="home-tab" class="text-gray-500 hover:text-white text-md rounded-lg p-1 text-center inline-flex items-center">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
@@ -82,6 +82,22 @@ if (!isset($_SESSION['cart'])) {
                                 <span>Logout</span>
                             </button>
                         </li>
+                        <li class="flex items-center">
+                            <button type="submit" name="about-tab" class="text-gray-500 hover:text-white text-md rounded-lg text-center inline-flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                                    <path fill-rule="evenodd" d="M2.25 12c0-5.385 4.365-9.75 9.75-9.75s9.75 4.365 9.75 9.75-4.365 9.75-9.75 9.75S2.25 17.385 2.25 12zm8.706-1.442c1.146-.573 2.437.463 2.126 1.706l-.709 2.836.042-.02a.75.75 0 01.67 1.34l-.04.022c-1.147.573-2.438-.463-2.127-1.706l.71-2.836-.042.02a.75.75 0 11-.671-1.34l.041-.022zM12 9a.75.75 0 100-1.5.75.75 0 000 1.5z" clip-rule="evenodd" />
+                                </svg>
+                                <span>About</span>
+                            </button>
+                        </li>
+                        <li class="flex items-center">
+                            <button type="submit" name="contact-tab" class="text-gray-500 hover:text-white text-md rounded-lg text-center inline-flex items-center">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                                    <path fill-rule="evenodd" d="M1.5 4.5a3 3 0 013-3h1.372c.86 0 1.61.586 1.819 1.42l1.105 4.423a1.875 1.875 0 01-.694 1.955l-1.293.97c-.135.101-.164.249-.126.352a11.285 11.285 0 006.697 6.697c.103.038.25.009.352-.126l.97-1.293a1.875 1.875 0 011.955-.694l4.423 1.105c.834.209 1.42.959 1.42 1.82V19.5a3 3 0 01-3 3h-2.25C8.552 22.5 1.5 15.448 1.5 6.75V4.5z" clip-rule="evenodd" />
+                                </svg>
+                                <span>Contact us</span>
+                            </button>
+                        </li>
                     </ul>
                 </form>
             </div>
@@ -90,7 +106,7 @@ if (!isset($_SESSION['cart'])) {
     </nav>
 
     <!-- Drawer -->
-    <div id="drawer-navigation" class="md:hidden fixed z-40 h-screen p-4 overflow-y-auto bg-white w-80 dark:bg-gray-800" tabindex="-1" aria-labelledby="drawer-navigation-label">
+    <div id="drawer-navigation" class="lg:hidden fixed z-40 h-screen p-4 overflow-y-auto bg-white w-80 dark:bg-gray-800" tabindex="-1" aria-labelledby="drawer-navigation-label">
         <h5 id="drawer-navigation-label" class="text-base font-semibold text-gray-500 uppercase dark:text-gray-400">Menu</h5>
         <button type="button" data-drawer-dismiss="drawer-navigation" aria-controls="drawer-navigation" class="text-gray-400 bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm p-1.5 absolute top-2.5 right-2.5 inline-flex items-center dark:hover:bg-gray-600 dark:hover:text-white">
             <svg aria-hidden="true" class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -142,6 +158,8 @@ if (!isset($_SESSION['cart'])) {
         include_once('src/views/Home.php');
     } else if (isset($_POST['products-tab'])) {
         include_once('src/views/Products.php');
+    } else if(isset($_POST['contact-tab'])) {
+        include_once('src/views/Contact.php');
     } else if (isset($_POST['login-tab'])) {
         session_start();
         include_once('src/views/Home.php');
@@ -149,7 +167,7 @@ if (!isset($_SESSION['cart'])) {
         include_once('src/views/ViewProduct.php');
     } else if (isset($_POST['add-to-cart']) || isset($_POST['cart-tab'])) {
         include_once('src/views/Cart.php');
-    } else if(isset($_POST['logout'])) {
+    } else if (isset($_POST['logout'])) {
         session_destroy();
         include_once('src/views/Home.php');
     } else {
