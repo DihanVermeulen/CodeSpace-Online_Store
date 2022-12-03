@@ -158,8 +158,10 @@ if (!isset($_SESSION['cart'])) {
         include_once('src/views/Home.php');
     } else if (isset($_POST['products-tab'])) {
         include_once('src/views/Products.php');
-    } else if(isset($_POST['contact-tab'])) {
+    } else if (isset($_POST['contact-tab'])) {
         include_once('src/views/Contact.php');
+    } else if (isset($_POST['about-tab'])) {
+        include_once('src/views/About.php');
     } else if (isset($_POST['login-tab'])) {
         session_start();
         include_once('src/views/Home.php');
