@@ -54,3 +54,7 @@ body {
     display: none;
     font-weight: 500;
 }
+
+.text-blue {
+    color: var(--primary-colour);
+}
