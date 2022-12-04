@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 @import url(./variables.css);
 
 body {
@@ -7,7 +7,6 @@ body {
     margin: 0;
     background-color: #242424;
     color: #fff;
-    font-weight: bolder;
 }
 
 .font-poppins {
