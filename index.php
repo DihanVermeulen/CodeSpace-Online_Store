@@ -18,7 +18,6 @@ if (!isset($_SESSION['cart'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://unpkg.com/flowbite@1.5.4/dist/flowbite.min.css" />
     <script src="https://unpkg.com/flowbite@1.5.4/dist/flowbite.js"></script>
-    <script src="https://kit.fontawesome.com/4e581bf954.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="public/styles/styles.css">
     <title>Whisker Exchange</title>
 </head>
