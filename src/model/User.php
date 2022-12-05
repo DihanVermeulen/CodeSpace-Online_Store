@@ -32,6 +32,15 @@ class User
         return $is_password_correct;
     }
 
+    public function createUser() {
+        return array(
+            "user_name"=> $this->getName(),
+            "user_surname"=> $this->getSurname(),
+            "user_email"=> $this->getEmail(),
+            "user_password"=> $this->hashPassword($this->getPassword())
+        );
+    }
+
     // ====================Get and Set====================
 
     /**
@@ -97,7 +106,7 @@ class User
     /**
      * Get the value of password
      */
-    public function getPassword()
+    private function getPassword()
     {
         return $this->password;
     }
