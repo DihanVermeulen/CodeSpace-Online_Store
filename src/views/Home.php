@@ -1,4 +1,13 @@
+<?php
+include __DIR__ . './../config/DbConfig.php';
+include __DIR__ . './../data/ProductDAO.php';
+$product_dao = new ProductDAO();
+$product_data = $product_dao->readAll(new DbConfig());
+?>
+
 <div class='overflow-x-hidden'>
+
+    <!-- Hero section -->
     <section class="flex flex-col m-4 md:flex-row lg:flex-row xl:flex-row overflow-x-none">
         <div class="flex p-8 flex-col w-screen z-20">
             <div class="lg:m-16 md:m-12 m-10 font-poppins">
