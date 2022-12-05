@@ -40,7 +40,7 @@ include __DIR__ . './../config/DbConfig.php';
             // Validates user data from form
             if ($user_object::validateUserData($user_object->createUser())) {
                 UserDAO::postUserToDb(new DbConfig(), $user_object->createUser());
-                echo "Account created, you can now login!";
+                echo "<p>Account created, you can now login!</p>";
             } else {
                 echo "<p class='text-red-500'>Problem with email or password</p>";
             };
