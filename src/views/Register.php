@@ -1,20 +1,20 @@
 <?php
 include __DIR__ . './../model/User.php';
 include __DIR__ . './../data/UserDAO.php';
-        $name = $_POST['name-input'];
-        $surname = $_POST['surname-input'];
-        $email = $_POST['email-input'];
-        $password = $_POST['password-input'];
+if (isset($_POST['register'])) {
+    $name = $_POST['name-input'];
+    $surname = $_POST['surname-input'];
+    $email = $_POST['email-input'];
+    $password = $_POST['password-input'];
 
-        echo $name;
-        echo $surname;
-        echo $email;
-        echo $password;
-    }
+    $user_object = new User($name, $surname, $email, $password);
+
+    print_r($user_object->createUser());
+}
 ?>
 
 <section class="flex flex-col justify-center items-center h-96">
-<h1 class="text-4xl">Sign Up</h1>
+    <h1 class="text-4xl">Sign Up</h1>
     <form method="POST">
         <p class="text-gray-500 mb-8">or <button type="submit" name="login-tab" class="text-blue">login</button></p>
     </form>
