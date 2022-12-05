@@ -195,6 +195,8 @@ if (!isset($_SESSION['cart'])) {
         include_once('src/views/Cart.php');
     } else if (isset($_POST['create-account'])) {
         include_once('src/views/Register.php');
+    } else if (isset($_POST['register'])) {
+        include_once('src/views/Register.php');
     } else if (isset($_POST['logout'])) {
         session_destroy();
         echo "<meta http-equiv='refresh' content='0'>";
