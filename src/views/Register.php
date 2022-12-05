@@ -1,6 +1,7 @@
 <?php
 include __DIR__ . './../model/User.php';
 include __DIR__ . './../data/UserDAO.php';
+include __DIR__ . './../config/DbConfig.php';
 if (isset($_POST['register'])) {
     $name = $_POST['name-input'];
     $surname = $_POST['surname-input'];
