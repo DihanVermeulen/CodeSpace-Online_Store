@@ -59,5 +59,17 @@ body {
 }
 
 .hero-section-image {
-    width: 40rem;
+    width: 30rem;
+}
+
+@media screen and (min-width:695px) {
+    .hero-section-image {
+        width: 35rem;
+    }
+}
+
+@media screen and (min-width:768px) {
+    .hero-section-image {
+        width: 40rem;
+    }
 }
