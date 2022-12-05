@@ -23,14 +23,14 @@ body {
     text-align: left;
 }
 
-.card:hover > .card-popup {
+.card:hover>.card-popup {
     display: flex;
     height: fit-content;
     padding: 10px;
     transition: all .1s ease-in-out;
 }
 
-.card:hover > .card-popup p {
+.card:hover>.card-popup p {
     display: block;
 }
 
@@ -56,4 +56,8 @@ body {
 
 .text-blue {
     color: var(--primary-colour);
+}
+
+.hero-section-image {
+    width: 40rem;
 }
