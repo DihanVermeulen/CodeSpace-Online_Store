@@ -1,5 +1,6 @@
 <?php
-    if(isset($_POST['register'])) {
+include __DIR__ . './../model/User.php';
+include __DIR__ . './../data/UserDAO.php';
         $name = $_POST['name-input'];
         $surname = $_POST['surname-input'];
         $email = $_POST['email-input'];
