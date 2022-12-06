@@ -36,10 +36,13 @@ include __DIR__ . './../config/DbConfig.php';
             $password = $_POST['password-input'];
 
             $user_object = new User($name, $surname, $email, $password);
+            $user = $user_object->createUser();
 
             // Validates user data from form
-            if ($user_object::validateUserData($user_object->createUser())) {
-                UserDAO::postUserToDb(new DbConfig(), $user_object->createUser());
+            if ($user_object::validateUserData($user)) {
+                $verified_user = $user;
+                $verified_user['user_password'] = $user_object::hashPassword($user['user_password']);
+                UserDAO::postUserToDb(new DbConfig(), $user);
                 echo "<p>Account created, you can now login!</p>";
             } else {
                 echo "<p class='text-red-500'>Problem with email or password</p>";
