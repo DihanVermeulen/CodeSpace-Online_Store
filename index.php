@@ -187,7 +187,7 @@ if (!isset($_SESSION['cart'])) {
         include_once('src/views/Contact.php');
     } else if (isset($_POST['about-tab'])) {
         include_once('src/views/About.php');
-    } else if (isset($_POST['login-tab'])) {
+    } else if (isset($_POST['login-tab']) || isset($_POST['login'])) {
         include_once('src/views/Login.php');
     } else if (isset($_POST['view-product'])) {
         include_once('src/views/ViewProduct.php');
