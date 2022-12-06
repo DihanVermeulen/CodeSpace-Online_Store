@@ -4,6 +4,13 @@ ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
 ob_start(); // Initiate the output buffer
+$is_logged_in = false;
+if(isset($_COOKIE['logged_in_as'])) {
+    echo "User is logged in";
+    $is_logged_in = true;
+} else {
+    echo "User is not logged in";
+}
 
 session_start();
 if (!isset($_SESSION['cart'])) {
