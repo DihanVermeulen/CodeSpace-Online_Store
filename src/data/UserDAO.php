@@ -3,6 +3,31 @@
 class UserDAO
 {
     // ====================Read====================
+
+    public static function getUserFromDbByEmail($DbConfig, $email) {
+        $db_connection = $DbConfig->connect();
+
+        $statement = "SELECT * FROM users WHERE user_email = '$email'";
+
+        // Check connection
+        if ($db_connection->connect_error) {
+            die("Connection failed: " . $db_connection->connect_error);
+        }
+        try {
+
+            $result = $db_connection->query($statement);
+            
+            while($row = $result->fetch_assoc()) {
+                $response[] = $row;
+            }
+            var_dump($response);
+            $db_connection->close();
+            return $response;
+        } catch(Error $err) {
+            echo $err;
+        }
+    }
+
     // ====================Create====================
 
     public static function postUserToDb($DbConfig, $user)
