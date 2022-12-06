@@ -1,3 +1,9 @@
+<?php
+    include __DIR__ . './../model/User.php';
+    include __DIR__ . './../data/UserDAO.php';
+    include __DIR__ . './../config/DbConfig.php';
+?>
+
 <section class="flex flex-col justify-center items-center h-96">
     <h1 class="text-4xl">Sign in</h1>
     <form method="POST">
