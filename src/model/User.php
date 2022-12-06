@@ -30,15 +30,6 @@ class User
     }
 
     /**
-     * Verifies hashed password
-     */
-    private function verifyPassword($hash)
-    {
-        $is_password_correct = password_verify($hash, PASSWORD_BCRYPT);
-        return $is_password_correct;
-    }
-
-    /**
      * Creates user array
      * @return self
      */
@@ -47,7 +38,7 @@ class User
         return array(
             "user_name" => $this->getName(),
             "user_surname" => $this->getSurname(),
-            "user_email"=> $this->getEmail(),
+            "user_email" => $this->getEmail(),
             "user_password" => $this->getPassword()
         );
     }
@@ -59,12 +50,21 @@ class User
         $password_regex = "/^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/";
 
         // Uses regex and filter_var to validate
-        if(preg_match($password_regex, $user['user_password']) && filter_var($user['user_email'], FILTER_VALIDATE_EMAIL)) {
+        if (preg_match($password_regex, $user['user_password']) && filter_var($user['user_email'], FILTER_VALIDATE_EMAIL)) {
             $user_is_valid = true;
         }
 
         // Returns true or false
         return $user_is_valid;
+    }
+
+    public static function authenticateUser($user, $password)
+    {
+        if (password_verify($password, $user[0]['user_password'])) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     // ====================Get and Set====================
