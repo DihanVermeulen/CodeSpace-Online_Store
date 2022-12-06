@@ -73,6 +73,8 @@ if (!isset($_SESSION['cart'])) {
                                 <span>Cart</span>
                             </button>
                         </li>
+
+                        <?php if(!$is_logged_in) { ?>
                         <li class="flex items-center">
                             <button type="submit" name="login-tab" class="text-gray-500 hover:text-white text-md rounded-lg text-center inline-flex items-center">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
@@ -81,6 +83,7 @@ if (!isset($_SESSION['cart'])) {
                                 <span>Login</span>
                             </button>
                         </li>
+                        <?php } else {?>
                         <li class="flex items-center">
                             <button type="submit" name="logout" class="text-gray-500 hover:text-white text-md rounded-lg text-center inline-flex items-center">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
@@ -89,6 +92,7 @@ if (!isset($_SESSION['cart'])) {
                                 <span>Logout</span>
                             </button>
                         </li>
+                        <?php } ?>
                         <li class="flex items-center">
                             <button type="submit" name="about-tab" class="text-gray-500 hover:text-white text-md rounded-lg text-center inline-flex items-center">
                                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
