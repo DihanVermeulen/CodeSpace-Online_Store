@@ -24,6 +24,7 @@
     if(isset($_POST['login'])) {
         $email = $_POST['email-input'];
         $password = $_POST['password-input'];
+        $user = UserDAO::getUserFromDbByEmail(new DbConfig(), $email);
     }
     ?>
 </section>
