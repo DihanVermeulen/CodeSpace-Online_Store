@@ -40,10 +40,14 @@ class UserDAO
         if ($db_connection->connect_error) {
             die("Connection failed: " . $db_connection->connect_error);
         }
+        try {
 
-        $stmt = $db_connection->prepare($statement);
-        $stmt->bind_param('ssss', $user['user_name'], $user['user_surname'], $user['user_email'], $user['user_password']);
-
-        $stmt->execute();
+            $stmt = $db_connection->prepare($statement);
+            $stmt->bind_param('ssss', $user['user_name'], $user['user_surname'], $user['user_email'], $user['user_password']);
+            
+            $stmt->execute();
+        } catch(Error $err) {
+            echo "Unknown error occured where registering user, please check your details and try again.";
+        }
     }
 }
