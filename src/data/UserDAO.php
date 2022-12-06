@@ -17,10 +17,11 @@ class UserDAO
 
             $result = $db_connection->query($statement);
             
-            while($row = $result->fetch_assoc()) {
-                $response[] = $row;
-            }
-            if($response) {
+            
+            if(!mysqli_num_rows($result) == 0) {
+                while($row = $result->fetch_assoc()) {
+                    $response[] = $row;
+                }
                 return $response;
             } else {
                 echo "Email or password is incorrect";
