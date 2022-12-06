@@ -20,9 +20,12 @@ class UserDAO
             while($row = $result->fetch_assoc()) {
                 $response[] = $row;
             }
-            var_dump($response);
+            if($response) {
+                return $response;
+            } else {
+                echo "Email or password is incorrect";
+            }
             $db_connection->close();
-            return $response;
         } catch(Error $err) {
             echo $err;
         }
