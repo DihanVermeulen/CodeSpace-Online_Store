@@ -41,8 +41,8 @@ include __DIR__ . './../config/DbConfig.php';
             // Validates user data from form
             if ($user_object::validateUserData($user)) {
                 $verified_user = $user;
-                $verified_user['user_password'] = $user_object::hashPassword($user['user_password']);
-                UserDAO::postUserToDb(new DbConfig(), $user);
+                $verified_user['user_password'] = $user_object::hashPassword($password);
+                UserDAO::postUserToDb(new DbConfig(), $verified_user);
                 echo "<p>Account created, you can now login!</p>";
             } else {
                 echo "<p class='text-red-500'>Problem with email or password</p>";
