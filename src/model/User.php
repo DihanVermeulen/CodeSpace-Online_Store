@@ -23,7 +23,7 @@ class User
     /**
      * Encrypts password
      */
-    private function hashPassword($password)
+    public static function hashPassword($password)
     {
         $hash_password = password_hash($password, PASSWORD_BCRYPT);
         return $hash_password;
