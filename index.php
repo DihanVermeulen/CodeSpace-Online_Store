@@ -212,6 +212,7 @@ if (!isset($_SESSION['cart'])) {
         include_once('src/views/Register.php');
     } else if (isset($_POST['logout'])) {
         session_destroy();
+        setcookie("logged_in_as", "", time()-172800);
         echo "<meta http-equiv='refresh' content='0'>";
     } else {
         include_once('src/views/Home.php');
