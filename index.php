@@ -3,6 +3,8 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
+ob_start(); // Initiate the output buffer
+
 session_start();
 if (!isset($_SESSION['cart'])) {
     $_SESSION['cart'] = array();
@@ -208,3 +210,7 @@ if (!isset($_SESSION['cart'])) {
 </body>
 
 </html>
+
+<?php
+ob_end_flush(); // Flush the output from the buffer
+?>
