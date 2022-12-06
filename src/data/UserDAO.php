@@ -24,7 +24,7 @@ class UserDAO
                 }
                 return $response;
             } else {
-                echo "Email or password is incorrect";
+                return false;
             }
             $db_connection->close();
         } catch(Error $err) {
