@@ -1,7 +1,7 @@
 <?php
-    include __DIR__ . './../model/User.php';
-    include __DIR__ . './../data/UserDAO.php';
-    include __DIR__ . './../config/DbConfig.php';
+include __DIR__ . './../model/User.php';
+include __DIR__ . './../data/UserDAO.php';
+include __DIR__ . './../config/DbConfig.php';
 ?>
 
 <section class="flex flex-col justify-center items-center h-96">
@@ -21,10 +21,20 @@
         <button type="submit" name="login" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Sign in</button>
     </form>
     <?php
-    if(isset($_POST['login'])) {
+    if (isset($_POST['login'])) {
         $email = $_POST['email-input'];
         $password = $_POST['password-input'];
+
         $user = UserDAO::getUserFromDbByEmail(new DbConfig(), $email);
+
+        if ($user) {
+            User::authenticateUser($user, $password);
+            setcookie('logged_in_as', $user[0]['id'], time() + 172800, '/');
+            echo "You are logged in!";
+            echo "<meta http-equiv='refresh' content='0'>";
+        } else {
+            echo "Email or password is incorrect";
+        }
     }
     ?>
 </section>
