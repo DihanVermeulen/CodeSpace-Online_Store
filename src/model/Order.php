@@ -3,11 +3,13 @@
 class Order {
 
     // ====================Variables====================
-
+    
     private $product_id;
     private $user_id;
     private $quantity;
     private $created_at;
+ 
+    // ====================Constructor====================
 
     public function __construct($product_id, $user_id, $quantity, $created_at)
     {
