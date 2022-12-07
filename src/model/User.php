@@ -3,6 +3,8 @@
 class User
 {
 
+    // ====================Variables====================
+
     private $name;
     private $surname;
     private $email;
@@ -43,6 +45,9 @@ class User
         );
     }
 
+    /**
+     * Validates user data
+     */
     public static function validateUserData($user)
     {
         $user_is_valid = false;
@@ -58,6 +63,9 @@ class User
         return $user_is_valid;
     }
 
+    /**
+     * Authenticates user: checks is passwords match
+     */
     public static function authenticateUser($user, $password)
     {
         if (password_verify($password, $user[0]['user_password'])) {
