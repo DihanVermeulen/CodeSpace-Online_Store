@@ -51,7 +51,7 @@ class UserDAO
             
             $stmt->execute();
         } catch(Error $err) {
-            echo "Unknown error occured where registering user, please check your details and try again.";
+            echo "Unknown error occured when registering user, please check your details and try again.";
         }
     }
 }
