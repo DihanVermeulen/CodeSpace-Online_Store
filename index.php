@@ -5,17 +5,18 @@ error_reporting(E_ALL);
 
 ob_start(); // Initiate the output buffer
 $is_logged_in = false;
-if(isset($_COOKIE['logged_in_as'])) {
+if (isset($_COOKIE['logged_in_as'])) {
     echo "User is logged in";
     $is_logged_in = true;
+    session_start();
 } else {
     echo "User is not logged in";
 }
 
-session_start();
 if (!isset($_SESSION['cart'])) {
     $_SESSION['cart'] = array();
 };
+
 ?>
 
 <!DOCTYPE html>
