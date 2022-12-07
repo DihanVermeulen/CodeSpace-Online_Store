@@ -212,6 +212,8 @@ if (!isset($_SESSION['cart'])) {
         include_once('src/views/Register.php');
     } else if (isset($_POST['register'])) {
         include_once('src/views/Register.php');
+    } else if (isset($_POST['checkout'])) {
+        include_once('src/views/Cart.php');
     } else if (isset($_POST['logout'])) {
         session_destroy();
         setcookie("logged_in_as", "", time() - 172800);
