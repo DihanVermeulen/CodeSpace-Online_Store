@@ -1,4 +1,6 @@
 <?php
+include __DIR__ . './../model/Order.php';
+
 // Runs when item has been selected to be added to cart
 if (isset($_POST['add-to-cart'])) {
     $quantity = $_POST['quantity'];
