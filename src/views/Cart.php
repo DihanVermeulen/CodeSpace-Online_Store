@@ -1,5 +1,6 @@
 <?php
 include __DIR__ . './../model/Order.php';
+include __DIR__ . './../data/OrderDAO.php';
 
 // Runs when item has been selected to be added to cart
 if (isset($_POST['add-to-cart'])) {
