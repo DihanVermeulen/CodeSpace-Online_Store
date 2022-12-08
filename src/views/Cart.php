@@ -81,8 +81,6 @@ if (isset($_POST['add-to-cart'])) {
 if (isset($_POST['checkout'])) {
     foreach ($_SESSION['cart'] as $item) {
         $order = new Order($item['id'], $_COOKIE['logged_in_as'], $item['quantity'], date('d-m-y h:i:s'));
-        var_dump($order);
-        echo "<br>";
         OrderDAO::postOrderToDb(new DbConfig(), $order);
         $_SESSION['cart'] = [];
     }
