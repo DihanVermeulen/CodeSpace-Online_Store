@@ -84,6 +84,7 @@ if (isset($_POST['checkout'])) {
         var_dump($order);
         echo "<br>";
         OrderDAO::postOrderToDb(new DbConfig(), $order);
+        $_SESSION['cart'] = [];
     }
 }
 ?>
