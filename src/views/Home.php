@@ -132,9 +132,24 @@ $product_data = $product_dao->readAll(new DbConfig());
                 support we can so that you don’t have
                 to ever worry about a thing!
             </p>
-            <form method="POST"> 
+            <form method="POST">
                 <button type="submit" name="create-account" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Sign up meow!</button>
             </form>
         </article>
     </section>
+
+    <div class="flex flex-col items-center">
+        <a onclick="scrollToTop();return false" class="flex flex-col items-center"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fff" class="w-6 h-6">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M12 19.5v-15m0 0l-6.75 6.75M12 4.5l6.75 6.75" />
+            </svg><span>Back to top</span></a>
+    </div>
 </div>
+
+<script>
+   function scrollToTop() {
+    if (document.body.scrollTop !== 0 || document.documentElement.scrollTop !== 0) {
+        window.scrollBy(0, -50);
+        requestAnimationFrame(scrollToTop);
+    }
+}
+</script>
