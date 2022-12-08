@@ -64,4 +64,22 @@ $product_data = $product_dao->readAll(new DbConfig());
         </form>
     </section>
 
-  
+    <section class='h-screen flex flex-row items-center justify center'>
+        <div class='m-20 z-20'>
+            <h2 class='text-3xl lg:text-6xl'>What is an NFT?</h2>
+            <p class='text-gray-400 text-sm lg:text-xl lg:w-2/3 mb-5'>
+                Non-fungible-token <br />
+                An NFT is a anything digital that is unique and cannot be replaced. NFTs can be bought, sold or even traded.
+            </p>
+            <form method="POST">
+                <button type="submit" name="create-account" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">Get started</button>
+            </form>
+        </div>
+
+        <a href='https://www.theverge.com/22310188/nft-explainer-what-is-blockchain-crypto-art-faq' target='_blank' class='z-[3]'>
+            <div class='lg:w-60 lg:h-60 w-32 h-32 rounded-full border-2 flex flex-row justify-center items-center border-cyan-300 
+                lg:-translate-x-74 lg:-translate-y-32 md:-translate-x-32 md:-translate-y-24 -translate-y-24 -translate-x-16 cursor-pointer'>Find Out More</div>
+        </a>
+    </section>
+
+   
