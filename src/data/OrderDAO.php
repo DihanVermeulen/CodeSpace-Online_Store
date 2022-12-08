@@ -9,11 +9,6 @@ class OrderDAO {
 
         $statement = "INSERT INTO orders VALUES(null, ?, ?, ?, ?)";
 
-        echo "product id: " . $order->getProduct_ID();
-        echo "user id: " . $order->getUser_id();
-        echo "quantity: " . $order->getQuantity();
-        echo "created at: " . $order->getCreated_at();
-
         $product_id = $order->getProduct_ID();
         $user_id = $order->getUser_id();
         $quantity = $order->getQuantity();
