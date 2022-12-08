@@ -64,10 +64,10 @@ $product_data = $product_dao->readAll(new DbConfig());
         </form>
     </section>
 
-    <section class='h-screen flex flex-row items-center justify center'>
+    <section class='h-screen flex flex-row items-center justify-center'>
         <div class='m-20 z-20'>
             <h2 class='text-3xl lg:text-6xl'>What is an NFT?</h2>
-            <p class='text-gray-400 text-sm lg:text-xl lg:w-2/3 mb-5'>
+            <p class='text-gray-400 text-md w-1/2 mb-5'>
                 Non-fungible-token <br />
                 An NFT is a anything digital that is unique and cannot be replaced. NFTs can be bought, sold or even traded.
             </p>
@@ -124,7 +124,7 @@ $product_data = $product_dao->readAll(new DbConfig());
         </article>
     </section>
 
-    <section class='flex flex-row justify-center items-center'>
+    <section class='flex flex-row justify-center items-center h-screen'>
         <article class='flex flex-col items-center w-2/3 lg:w-1/3 bg-gray-700/50 p-4 lg:p-12 rounded'>
             <h2 class='text-2xl lg:text-4xl'>Try our service now!</h2>
             <p class='text-md lg:text-lg text-gray-400 text-center mb-3 lg:mb-6'>
@@ -148,7 +148,7 @@ $product_data = $product_dao->readAll(new DbConfig());
 <script>
    function scrollToTop() {
     if (document.body.scrollTop !== 0 || document.documentElement.scrollTop !== 0) {
-        window.scrollBy(0, -50);
+        window.scrollBy(0, -100);
         requestAnimationFrame(scrollToTop);
     }
 }
