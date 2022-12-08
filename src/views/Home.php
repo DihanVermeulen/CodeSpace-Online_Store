@@ -67,7 +67,7 @@ $product_data = $product_dao->readAll(new DbConfig());
     <section class='h-screen flex flex-row items-center justify-center'>
         <div class='m-20 z-20'>
             <h2 class='text-3xl lg:text-6xl'>What is an NFT?</h2>
-            <p class='text-gray-400 text-md w-1/2 mb-5'>
+            <p class='text-gray-400 text-lg w-1/2 mb-5'>
                 Non-fungible-token <br />
                 An NFT is a anything digital that is unique and cannot be replaced. NFTs can be bought, sold or even traded.
             </p>
