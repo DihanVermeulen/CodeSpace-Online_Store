@@ -22,7 +22,7 @@ $product_data = $product_dao->readAll(new DbConfig());
         </div>
 
         <div class="w-full flex justify-end">
-            <img src='./../../public//assets//images//cat_paw_hovering_card.png' class=' right-0 hero-section-image' />
+            <img src='./../../public/assets/images/cat_paw_hovering_card.png' class=' right-0 hero-section-image' />
         </div>
     </section>
 
