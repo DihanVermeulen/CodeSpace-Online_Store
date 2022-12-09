@@ -47,14 +47,14 @@ if (isset($_POST['add-to-cart'])) {
         </thead>
         <tbody>
             <?php
-            foreach ($_SESSION['cart'] as $cart_item) { ?>
+            foreach ($_SESSION['cart'] as $key=>$cart_item) { ?>
                 <tr class="border-b">
                     <td class="flex justify-center items-center p-4 text-3xl"><img class="w-44 mr-8" src='<?php echo $cart_item['image'] ?>' alt="NFT" />
                         <?php echo $cart_item['title']
                         ?></td>
                     <td class="text-center text-xl"><?php echo $cart_item['quantity'] ?></td>
                     <form method="POST"> 
-                        <td class="text-center text-xl"><button type="submit" name="delete-item" value="<?php echo $cart_item['id'] ?>" class="border p-4">Remove</button></td>
+                        <td class="text-center text-xl"><button type="submit" name="delete-item" value=<?php echo $key ?> class="border p-4">Remove</button></td>
                     </form>
                     <td class="text-center text-xl"><?php echo $cart_item['quantity'] * $cart_item['price'] ?> ETH</td>
                 </tr>
@@ -86,5 +86,9 @@ if (isset($_POST['checkout'])) {
         OrderDAO::postOrderToDb(new DbConfig(), $order);
         $_SESSION['cart'] = [];
     }
+}
+
+if(isset($_POST['delete-item'])) {
+    unset($_SESSION['cart'][$_POST['delete-item']]);    
 }
 ?>
