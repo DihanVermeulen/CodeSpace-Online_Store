@@ -1,5 +1,5 @@
 <section class="p-8 flex">
-    <div class="flex flex-col w-1/2">
+    <div class="flex flex-col justify-center w-1/2">
         <header class="flex justify-left mb-4 w-screen">
             <h1 class="text-4xl w-96">Building an interactive community</h1>
         </header>
