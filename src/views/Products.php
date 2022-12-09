@@ -13,7 +13,7 @@
             <main class="h-screen grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 text-gray-900">
                 <?php
                 foreach ($product_data as $item) { ?>
-                    <button value="<?php echo $item['id'] ?>" type="submit" name="view-product" class="z-10 font-medium bg-transparent hover:drop-shadow-lg rounded-lg hover:bg-gray-800 focus:bg-indigo-300">
+                    <button value="<?php echo $item['id'] ?>" type="submit" name="view-product" class="z-10 font-medium bg-transparent hover:drop-shadow-lg rounded-lg hover:bg-gray-800 focus:bg-indigo-800">
                         <article class="card">
                             <img class="h-2/3 rounded-t-lg object-cover" src='<?php echo $item['product_image_location'] ?>' />
                             <div class="h-1/3 rounded-b-lg p-4">
