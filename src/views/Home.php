@@ -36,7 +36,7 @@ $product_data = $product_dao->readAll(new DbConfig());
                     <article class="card">
                         <img class="h-2/3 rounded-t-lg object-cover" src='<?php echo $product_data[$index]['product_image_location'] ?>' />
                         <div class="h-1/3 rounded-b-lg p-4">
-                            <h2 class="mb-2 text-2xl text-gray-500"><?php echo $product_data[$index]['product_name'] ?></h2>
+                            <h2 class="mb-2 text-2xl"><?php echo $product_data[$index]['product_name'] ?></h2>
                             <p class="text-xl text-gray-300"><?php echo $product_data[$index]['product_price'] ?> ETH</p>
                         </div>
                     </article>
