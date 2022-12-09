@@ -53,7 +53,9 @@ if (isset($_POST['add-to-cart'])) {
                         <?php echo $cart_item['title']
                         ?></td>
                     <td class="text-center text-xl"><?php echo $cart_item['quantity'] ?></td>
-                    <td class="text-center text-xl"><button class="border p-4">X</button></td>
+                    <form method="POST"> 
+                        <td class="text-center text-xl"><button type="submit" name="delete-item" value="<?php echo $cart_item['id'] ?>" class="border p-4">Remove</button></td>
+                    </form>
                     <td class="text-center text-xl"><?php echo $cart_item['quantity'] * $cart_item['price'] ?> ETH</td>
                 </tr>
             <?php } ?>
