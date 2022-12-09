@@ -33,6 +33,11 @@ if (isset($_POST['add-to-cart'])) {
         ));
     }
 }
+
+$cart_total = 0;
+foreach ($_SESSION['cart'] as $cart_item) {
+    $cart_total += $cart_item['quantity'] * $cart_item['price']; 
+}
 ?>
 
 <section>
@@ -47,13 +52,13 @@ if (isset($_POST['add-to-cart'])) {
         </thead>
         <tbody>
             <?php
-            foreach ($_SESSION['cart'] as $key=>$cart_item) { ?>
+            foreach ($_SESSION['cart'] as $key => $cart_item) { ?>
                 <tr class="border-b">
                     <td class="flex justify-center items-center p-4 text-3xl"><img class="w-44 mr-8" src='<?php echo $cart_item['image'] ?>' alt="NFT" />
                         <?php echo $cart_item['title']
                         ?></td>
                     <td class="text-center text-xl"><?php echo $cart_item['quantity'] ?></td>
-                    <form method="POST"> 
+                    <form method="POST">
                         <td class="text-center text-xl"><button type="submit" name="delete-item" value=<?php echo $key ?> class="border p-4">Remove</button></td>
                     </form>
                     <td class="text-center text-xl"><?php echo $cart_item['quantity'] * $cart_item['price'] ?> ETH</td>
@@ -63,7 +68,7 @@ if (isset($_POST['add-to-cart'])) {
     </table>
 
     <form method="POST" class="flex mt-4 items-center space-x-8 p-8">
-        <div class="inline-flex justify-center items-center ml-auto text-2xl rounded bg-white text-gray-500 w-44 h-20">Total: </div>
+        <div class="inline-flex justify-center items-center ml-auto text-2xl rounded bg-white text-gray-500 w-44 h-20">Total: <?php echo $cart_total ?> ETH</div>
         <button type="submit" name="checkout" class="text-white bg-[#3b5998] hover:bg-[#3b5998]/90 focus:ring-4 focus:outline-none focus:ring-[#3b5998]/50 font-medium w-44 h-20 rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#3b5998]/55">
             <span class="text-xl">Checkout</span>
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-8 h-8">
@@ -88,7 +93,7 @@ if (isset($_POST['checkout'])) {
     }
 }
 
-if(isset($_POST['delete-item'])) {
-    unset($_SESSION['cart'][$_POST['delete-item']]);    
+if (isset($_POST['delete-item'])) {
+    unset($_SESSION['cart'][$_POST['delete-item']]);
 }
 ?>
