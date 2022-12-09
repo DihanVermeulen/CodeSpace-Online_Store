@@ -18,9 +18,9 @@ $product_data = $product_dao->readAll(new DbConfig());
     </header>
 
     <section id='explore' class="flex justify-center items-center h-screen">
-        <div class="flex w-full m-8 border border-gray-500 rounded-lg">
+        <div class="flex flex-col items-center md:flex-row w-full m-8 border border-gray-700 rounded-lg">
 
-            <div class=" flex flex-col bg-red-300 justify-center p-8 w-1/3">
+            <div class=" flex flex-col justify-center p-8 w-full sm:w-1/2">
                 <h1 class="text-5xl mb-4">Explore our <br> NFTs</h1>
                 <p class="text-xl text-gray-500 mb-4">Powered by <strong class="text-white">Whisker Exchange</strong></p>
                 <form method="POST">
@@ -28,7 +28,7 @@ $product_data = $product_dao->readAll(new DbConfig());
                 </form>
             </div>
 
-            <div class="w-2/3 p-8">
+            <div class="p-8">
                 <form method="POST" class="flex space-x-4 sm:space-x-8 md:space-x-8 lg:space-x-8 xl:space-x-8">
                     <?php
                     for ($index = 0; $index < 3; $index++) { ?>
