@@ -72,14 +72,38 @@ html {
     width: 30rem;
 }
 
+.homepage-information-article {
+    width: 100%;
+}
+
+.homepage-additions {
+    width: 100%;
+}
+
 @media screen and (min-width:695px) {
     .hero-section-image {
         width: 35rem;
+    }
+
+    .homepage-information-article {
+        width: 75%;
+    }
+
+    .homepage-additions {
+        width: 75%;
     }
 }
 
 @media screen and (min-width:768px) {
     .hero-section-image {
         width: 40rem;
+    }
+
+    .homepage-information-article {
+        width: 50%;
+    }
+
+    .homepage-additions {
+        width: 70%;
     }
 }
