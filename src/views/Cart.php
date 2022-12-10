@@ -91,6 +91,8 @@ if (isset($_POST['checkout'])) {
         OrderDAO::postOrderToDb(new DbConfig(), $order);
         $_SESSION['cart'] = [];
     }
+
+    header('location: src/views/PurchaseSuccessful.php');
 }
 
 if (isset($_POST['delete-item'])) {
