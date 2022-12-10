@@ -37,7 +37,7 @@ if (isset($_POST['add-to-cart'])) {
 // Calculates total price of items 
 $cart_total = 0;
 foreach ($_SESSION['cart'] as $cart_item) {
-    $cart_total += $cart_item['quantity'] * $cart_item['price']; 
+    $cart_total += $cart_item['quantity'] * $cart_item['price'];
 }
 ?>
 
@@ -98,5 +98,6 @@ if (isset($_POST['checkout'])) {
 // Deletes item from cart
 if (isset($_POST['delete-item'])) {
     unset($_SESSION['cart'][$_POST['delete-item']]);
+    header('refresh: 0');
 }
 ?>
