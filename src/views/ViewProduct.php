@@ -12,7 +12,6 @@ if (isset($_POST['view-product'])) {
 $is_logged_in = false;
 if (isset($_COOKIE['logged_in_as'])) {
     $is_logged_in = true;
-    echo "user is logged in";
 }
 ?>
 
