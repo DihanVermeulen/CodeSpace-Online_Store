@@ -16,7 +16,7 @@ if (isset($_COOKIE['logged_in_as'])) {
 }
 ?>
 
-<section class="flex p-8">
+<section class="flex flex-col sm:flex-row p-8">
     <main class="w-1/4 mr-4">
         <img class="w-full rounded-lg" src='<?php echo $product_data->product_image_location ?>' />
     </main>
