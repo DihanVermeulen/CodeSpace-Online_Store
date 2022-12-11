@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+@import url(./variables.css);
+
+body {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    background-color: #242424;
+    color: #fff;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.font-poppins {
+    font-family: 'Poppins', sans-serif;
+}
+
+.card {
+    color: #fff;
+    background-color: #242424;
+    height: 100%;
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+    text-align: left;
+}
+
+.card:hover>.card-popup {
+    display: flex;
+    height: fit-content;
+    padding: 10px;
+    transition: all .1s ease-in-out;
+}
+
+.card:hover>.card-popup p {
+    display: block;
+}
+
+.card:hover {
+    transform: scale(1.02);
+    transition: all .3s ease-in-out;
+}
+
+.card-popup {
+    position: absolute;
+    background-color: var(--primary-colour);
+    border-radius: 10px;
+    padding: 0;
+    bottom: 0;
+    height: 0;
+    width: 100%;
+}
+
+.card img {
+    -webkit-mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 1)), to(rgba(0, 0, 0, 0)));
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 80%, rgba(0, 0, 0, 0));
+}
+
+.card-popup p {
+    display: none;
+    font-weight: 500;
+}
+
+.text-blue {
+    color: var(--primary-colour);
+}
+
+.hero-section-image {
+    width: 30rem;
+}
+
+.homepage-information-article {
+    width: 100%;
+}
+
+.homepage-additions {
+    width: 100%;
+}
+
+@media screen and (min-width:695px) {
+    .hero-section-image {
+        width: 35rem;
+    }
+
+    .homepage-information-article {
+        width: 75%;
+    }
+
+    .homepage-additions {
+        width: 75%;
+    }
+}
+
+@media screen and (min-width:768px) {
+    .hero-section-image {
+        width: 40rem;
+    }
+
+    .homepage-information-article {
+        width: 50%;
+    }
+
+    .homepage-additions {
+        width: 70%;
+    }
+}
